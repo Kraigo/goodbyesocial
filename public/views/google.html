@@ -1,0 +1,15 @@
+<h2>Google Photos</h2>
+<div class="well">
+    <div ng-hide="isAuth.google">
+        <button class="btn btn-primary" ng-click="authorization('google')">Авторизироваться</button>
+
+        <p ng-show="authTimer.google" style="margin-top:15px">
+            Ожидание <a href="{{authLink.google}}">Авторизации</a>.<br>
+            Возможно ваш браузер блокирует всплывающее окно.
+        </p>
+    </div>
+
+    <div ng-show="isAuth.google">
+        В разработке
+    </div>
+</div>

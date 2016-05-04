@@ -1,0 +1,123 @@
+body
+  padding: 50px
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+a
+  color: #00B7FF
+
+
+.album
+  position: relative
+  width: 50%
+  padding: 10px
+  float: left
+  opacity: 0.7;
+  transition: all 0.2s ease;
+
+  &.selected
+    opacity: 1
+
+  &s-row
+    margin: 0 -10px
+
+    &:after
+      content: ''
+      display: block
+      clear: both
+
+  &:before
+    content: ''
+    padding-bottom: 100%
+    display: block
+    float: left
+
+  &-pic
+    background-position: center
+    background-size: cover
+    padding-bottom: 100%
+
+  &-caption
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.80)
+    margin: 0
+    height: 30px
+    line-height: 30px
+    padding: 0 10px
+    margin-top: -30px
+
+  &-size
+    position: absolute
+    top: 20px
+    left: 20px
+    background-color: rgba(255, 255, 255, 0.80)
+    padding: 5px 10px
+    border-radius: 15px
+
+
+
+.photo
+  position: relative
+  width: 20%
+  padding: 10px
+  float: left
+
+  &:before
+    content: ''
+    padding-bottom: 100%
+    display: block
+    float: left
+
+
+
+.profile
+  padding-bottom: 10px
+  border-bottom: 1px solid #2C3E50
+  margin-bottom: 20px
+
+  &:after
+    content: ''
+    clear: both
+    display: block;
+
+  &-pic
+    float: left
+
+  &-title
+    margin: 0
+    padding-left: 70px
+    line-height: 50px
+
+.selected-handler
+  visibility: hidden
+  opacity: 0
+  transition: all 0.1s ease
+  transform: scale(0.4)
+
+  position: absolute
+  top: 20px
+  right: 20px
+  line-height: 30px
+  width: 30px
+  text-align: center
+  background-color: #fff
+  border-radius: 50%
+  color: #74B7E3
+
+  &:hover
+    cursor: pointer;
+
+  .selected &
+    visibility: visible
+    opacity: 1
+    transform: scale(1)
+    transition: all 0.3s ease
+
+
+ @media screen and (max-width: 768px)
+    body
+      padding: 0
+
+    .album
+      width: 100%

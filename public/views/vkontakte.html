@@ -1,0 +1,42 @@
+<h2>ВКонтакте</h2>
+<div class="well">
+    <div ng-hide="isAuth.vkontakte">
+        <button class="btn btn-primary" ng-click="authorization('vkontakte')">Авторизироваться</button>
+
+        <p ng-show="authTimer.vkontakte" style="margin-top:15px">
+            Ожидание <a href="{{authLink.vkontakte}}">Авторизации</a>.<br>
+            Возможно ваш браузер блокирует всплывающее окно.
+        </p>
+    </div>
+
+    <div ng-show="isAuth.vkontakte">
+
+        <div class="profile" ng-if="user">
+            <button class="btn btn-danger pull-right btn-xs" ng-click="logout()">Выйти</button>
+            <img ng-src="{{user.photo_50}}" alt="" class="img-circle profile-pic"/>
+            <h3 class="profile-title" ng-bind="user.first_name + ' ' + user.last_name"></h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-info" ng-click="download()" ng-disabled="!totalSelectedAlbums">Скачать ({{totalSelectedAlbums}} альбомов)</button>
+            </div>
+            <div class="col-md-6">
+                Выбрано фотографий: <span class="badge" ng-bind="totalSelectedPhotos"></span>
+            </div>
+        </div>
+
+        <div class="albums-row">
+            <div class="album" ng-repeat="album in albums" ng-click="select(album)" ng-class="{selected: album.selected}">
+                                <span class="selected-handler">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </span>
+                <div class="album-pic" ng-style="{'background-image': 'url(' + album.thumb_src + ')'}"></div>
+                <h5 class="album-caption" ng-bind="album.title"></h5>
+                <span class="album-size"><i class="glyphicon glyphicon-camera"></i> {{album.size}}</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>

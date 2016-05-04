@@ -1,0 +1,119 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+.album {
+  position: relative;
+  width: 50%;
+  padding: 10px;
+  float: left;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+.album.selected {
+  opacity: 1;
+}
+.albums-row {
+  margin: 0 -10px;
+}
+.albums-row:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.album:before {
+  content: '';
+  padding-bottom: 100%;
+  display: block;
+  float: left;
+}
+.album-pic {
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 100%;
+}
+.album-caption {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  background-color: rgba(255,255,255,0.8);
+  margin: 0;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  margin-top: -30px;
+}
+.album-size {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255,255,255,0.8);
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+.photo {
+  position: relative;
+  width: 20%;
+  padding: 10px;
+  float: left;
+}
+.photo:before {
+  content: '';
+  padding-bottom: 100%;
+  display: block;
+  float: left;
+}
+.profile {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2c3e50;
+  margin-bottom: 20px;
+}
+.profile:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.profile-pic {
+  float: left;
+}
+.profile-title {
+  margin: 0;
+  padding-left: 70px;
+  line-height: 50px;
+}
+.selected-handler {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.1s ease;
+  transform: scale(0.4);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #74b7e3;
+}
+.selected-handler:hover {
+  cursor: pointer;
+}
+.selected .selected-handler {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+  .album {
+    width: 100%;
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main">
+<head>
+    <meta charset="UTF-8">
+    <title>Goodbye Social</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.angularjs.org/1.5.3/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.3/angular-cookies.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+
+</head>
+<body ng-controller="MainController">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6" ng-include="'/views/vkontakte.html'"></div>
+            <div class="col-sm-6" ng-include="'/views/google.html'"></div>
+        </div>
+    </div>
+</body>
+</html>
